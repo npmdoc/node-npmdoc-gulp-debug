@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/sindresorhus/gulp-debug#readme"
-
-    >gulp-debug (v3.1.0)</a>
+    <a href="https://github.com/sindresorhus/gulp-debug#readme">gulp-debug (v3.1.0)</a>
 </h1>
 <h4>Debug Vinyl file streams to see what files are run through your Gulp pipeline</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-debug">module gulp-debug</a><ol>
 
@@ -65,7 +58,7 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.gulp-debug.gulp-debug">
             function <span class="apidocSignatureSpan"></span>gulp-debug
-            <span class="apidocSignatureSpan">({ title: &#x27;gulp-debug:&#x27;, minimal: true, showFiles: true }, opts)</span>
+            <span class="apidocSignatureSpan">({ title: 'gulp-debug:', minimal: true, showFiles: true }, opts)</span>
             </a>
 
         </li>
@@ -103,14 +96,14 @@
     <h2>
         <a href="#apidoc.element.gulp-debug.gulp-debug" id="apidoc.element.gulp-debug.gulp-debug">
         function <span class="apidocSignatureSpan"></span>gulp-debug
-        <span class="apidocSignatureSpan">({ title: &#x27;gulp-debug:&#x27;, minimal: true, showFiles: true }, opts)</span>
+        <span class="apidocSignatureSpan">({ title: 'gulp-debug:', minimal: true, showFiles: true }, opts)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">opts =&#x3e; {
-	opts = Object.assign({ title: &#x27;gulp-debug:&#x27;, minimal: true, showFiles: true }, opts);
+    <li>description and source-code<pre class="apidocCodePre">opts =&gt; {
+	opts = Object.assign({ title: 'gulp-debug:', minimal: true, showFiles: true }, opts);
 
-	if (process.argv.indexOf(&#x27;--verbose&#x27;) !== -1) {
+	if (process.argv.indexOf('--verbose') !== -1) {
 		opts.verbose = true;
 		opts.minimal = false;
 		opts.showFiles = true;
@@ -118,25 +111,25 @@
 
 	let count = 0;
 
-	return through.obj((file, enc, cb) =&#x3e; {
+	return through.obj((file, enc, cb) =&gt; {
 		if (opts.showFiles) {
 			const full =
-				&#x27;\n&#x27; +
-				(file.cwd ? &#x27;cwd:   &#x27; + prop(tildify(file.cwd)) : &#x27;&#x27;) +
-				(file.base ? &#x27;\nbase:  &#x27; + prop(tildify(file.base)) : &#x27;&#x27;) +
-				(file.path ? &#x27;\npath:  &#x27; + prop(tildify(file.path)) : &#x27;&#x27;) +
-				(file.stat &#x26;&#x26; opts.verbose ? &#x27;\nstat:  &#x27; + prop(stringifyObject(file.stat, {indent: &#x27;       &#x27;}).replace(/[{}]/g, &#x27;&#x27;).trim()) : &#x27;&#x27;) +
-				&#x27;\n&#x27;;
+				'\n' +
+				(file.cwd ? 'cwd:   ' + prop(tildify(file.cwd)) : '') +
+				(file.base ? '\nbase:  ' + prop(tildify(file.base)) : '') +
+				(file.path ? '\npath:  ' + prop(tildify(file.path)) : '') +
+				(file.stat &amp;&amp; opts.verbose ? '\nstat:  ' + prop(stringifyObject(file.stat, {indent: '       '}).replace(/[{}]/g, '').trim()) : '') +
+				'\n';
 
 			const output = opts.minimal ? prop(path.relative(process.cwd(), file.path)) : full;
 
-			gutil.log(opts.title + &#x27; &#x27; + output);
+			gutil.log(opts.title + ' ' + output);
 		}
 
 		count++;
 		cb(null, file);
-	}, cb =&#x3e; {
-		gutil.log(opts.title + &#x27; &#x27; + chalk.green(count + &#x27; &#x27; + plur(&#x27;item&#x27;, count)));
+	}, cb =&gt; {
+		gutil.log(opts.title + ' ' + chalk.green(count + ' ' + plur('item', count)));
 		cb();
 	});
 }</pre></li>
@@ -185,3 +178,4 @@
     ]
 </div>
 </div>
+</body></html>

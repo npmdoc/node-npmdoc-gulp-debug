@@ -61,12 +61,121 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-debug">module gulp-debug</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-debug.gulp-debug">
+            function <span class="apidocSignatureSpan"></span>gulp-debug
+            <span class="apidocSignatureSpan">({ title: &#x27;gulp-debug:&#x27;, minimal: true, showFiles: true }, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-debug.toString">
+            function <span class="apidocSignatureSpan">gulp-debug.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-debug.toString">module gulp-debug.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-debug.toString.toString">
+            function <span class="apidocSignatureSpan">gulp-debug.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gulp-debug" id="apidoc.module.gulp-debug">module gulp-debug</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-debug.gulp-debug" id="apidoc.element.gulp-debug.gulp-debug">
+        function <span class="apidocSignatureSpan"></span>gulp-debug
+        <span class="apidocSignatureSpan">({ title: &#x27;gulp-debug:&#x27;, minimal: true, showFiles: true }, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opts =&#x3e; {
+	opts = Object.assign({ title: &#x27;gulp-debug:&#x27;, minimal: true, showFiles: true }, opts);
+
+	if (process.argv.indexOf(&#x27;--verbose&#x27;) !== -1) {
+		opts.verbose = true;
+		opts.minimal = false;
+		opts.showFiles = true;
+	}
+
+	let count = 0;
+
+	return through.obj((file, enc, cb) =&#x3e; {
+		if (opts.showFiles) {
+			const full =
+				&#x27;\n&#x27; +
+				(file.cwd ? &#x27;cwd:   &#x27; + prop(tildify(file.cwd)) : &#x27;&#x27;) +
+				(file.base ? &#x27;\nbase:  &#x27; + prop(tildify(file.base)) : &#x27;&#x27;) +
+				(file.path ? &#x27;\npath:  &#x27; + prop(tildify(file.path)) : &#x27;&#x27;) +
+				(file.stat &#x26;&#x26; opts.verbose ? &#x27;\nstat:  &#x27; + prop(stringifyObject(file.stat, {indent: &#x27;       &#x27;}).replace(/[{}]/g, &#x27;&#x27;).trim()) : &#x27;&#x27;) +
+				&#x27;\n&#x27;;
+
+			const output = opts.minimal ? prop(path.relative(process.cwd(), file.path)) : full;
+
+			gutil.log(opts.title + &#x27; &#x27; + output);
+		}
+
+		count++;
+		cb(null, file);
+	}, cb =&#x3e; {
+		gutil.log(opts.title + &#x27; &#x27; + chalk.green(count + &#x27; &#x27; + plur(&#x27;item&#x27;, count)));
+		cb();
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-debug.toString" id="apidoc.element.gulp-debug.toString">
+        function <span class="apidocSignatureSpan">gulp-debug.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-debug.toString" id="apidoc.module.gulp-debug.toString">module gulp-debug.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-debug.toString.toString" id="apidoc.element.gulp-debug.toString.toString">
+        function <span class="apidocSignatureSpan">gulp-debug.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
