@@ -1,6 +1,6 @@
 # npmdoc-gulp-debug
 
-#### api documentation for  [gulp-debug (v3.1.0)](https://github.com/sindresorhus/gulp-debug#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-debug.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-debug) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-debug.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-debug)
+#### basic api documentation for  [gulp-debug (v3.1.0)](https://github.com/sindresorhus/gulp-debug#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-debug.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-debug) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-debug.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-debug)
 
 #### Debug Vinyl file streams to see what files are run through your Gulp pipeline
 
@@ -85,7 +85,8 @@
     "scripts": {
         "test": "xo && mocha"
     },
-    "version": "3.1.0"
+    "version": "3.1.0",
+    "bin": {}
 }
 ```
 
